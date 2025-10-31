@@ -79,7 +79,7 @@ O arquivo `userService.clean.test.js` foi criado como uma versão refatorada e m
 - Evita laços e condicionais dentro de testes (for/if), que tornam a intenção do teste ambígua e podem ocultar falhas.
 - Usa asserções explícitas e correspondentes ao comportamento esperado (ex.: `toThrow` para validar exceções), evitando testes que passam silenciosamente.
 - Cada teste foca em um único comportamento ou cenário, facilitando a identificação do que quebrou quando houver falhas.
-- Comentários e nomes de testes mais descritivos, facilitando a leitura e manutenção por outros desenvolvedores.
+- Comentários e nomes de testes mais descritivos utilizando o padrão "Given When Then", facilitando a leitura e manutenção por outros desenvolvedores.
 - Reduz fragilidade por dependência de formatação exata do relatório: os testes verificam conteúdo essencial, não detalhes frágilmente formatados.
 
 Estas mudanças tornam a suíte mais confiável, melhoram o custo de manutenção e facilitam futuras refatorações do código de produção ou dos próprios testes.
