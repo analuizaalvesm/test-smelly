@@ -9,7 +9,6 @@ export default [
       ecmaVersion: "latest",
       sourceType: "module",
     },
-    // Keep languageOptions minimal for project files; add a separate override below for test globals
     plugins: {
       jest: jestPlugin,
     },
@@ -19,7 +18,6 @@ export default [
       "jest/no-identical-title": "error",
     },
   },
-  // Test files: expose Jest globals so ESLint doesn't flag describe/test/expect
   {
     files: ["test/**/*.js"],
     languageOptions: {
