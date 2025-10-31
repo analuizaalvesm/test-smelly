@@ -18,7 +18,7 @@ Seu trabalho será dividido em três etapas principais:
 2.  **Refatorar:** Reescrever os testes em um novo arquivo (`userService.clean.test.js`), corrigindo os problemas encontrados e aplicando as melhores práticas, como o padrão **Arrange, Act, Assert (AAA)**.
 3.  **Validar:** Provar que a refatoração foi bem-sucedida, garantindo que os novos testes passem, estejam livres de avisos do linter e sejam mais claros e eficazes.
 
-## Como Começar (Setup)
+## Setup
 
 Siga os passos abaixo para preparar seu ambiente de trabalho.
 
@@ -41,7 +41,7 @@ npm install
 npm test
 ```
 
-## Como rodar (comandos úteis)
+### Instruções do Trabalho
 
 Rodar a suíte de testes (Jest):
 
