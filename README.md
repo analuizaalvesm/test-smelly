@@ -25,6 +25,71 @@ Siga os passos abaixo para preparar seu ambiente de trabalho.
 **1. Clone o repositório:**
 
 ```bash
-git clone [URL_DO_SEU_FORK_DO_REPOSITORIO]
+git clone https://github.com/analuizaalvesm/test-smelly.git
 cd test-smelly
 ```
+
+**2. Instale as dependências do projeto:**
+
+```bash
+npm install
+```
+
+**_3. Execute a suíte de testes:_**
+
+```bash
+npm test
+```
+
+## Como rodar (comandos úteis)
+
+Rodar a suíte de testes (Jest):
+
+```bash
+npm test
+```
+
+Rodar o ESLint apenas nos arquivos específicos para ver avisos separadamente (ex.: verificar o código fonte e os testes limpos/`smelly`):
+
+```bash
+# Verificar o arquivo de serviço
+npx eslint src/userService.js
+
+# Verificar o arquivo de testes limpos
+npx eslint test/userService.clean.test.js
+
+# Verificar o arquivo de testes "smelly"
+npx eslint test/userService.smelly.test.js
+```
+
+Se preferir executar o linter em toda a base de código:
+
+```bash
+npx eslint .
+```
+
+> Observação: use `npx` para garantir a versão instalada localmente nas dependências dev do projeto.
+
+## Melhorias do `userService.clean.test.js` em relação ao `userService.smelly.test.js`
+
+O arquivo `userService.clean.test.js` foi criado como uma versão refatorada e mais robusta da suíte original; entre as melhorias introduzidas estão:
+
+- Aplicação clara do padrão Arrange / Act / Assert (AAA), o que deixa cada teste legível e com etapas bem definidas.
+- Setup/teardown isolado com `beforeEach()` para garantir que cada teste rode com o estado inicial esperado (banco de dados em memória limpo).
+- Evita laços e condicionais dentro de testes (for/if), que tornam a intenção do teste ambígua e podem ocultar falhas.
+- Usa asserções explícitas e correspondentes ao comportamento esperado (ex.: `toThrow` para validar exceções), evitando testes que passam silenciosamente.
+- Cada teste foca em um único comportamento ou cenário, facilitando a identificação do que quebrou quando houver falhas.
+- Comentários e nomes de testes mais descritivos, facilitando a leitura e manutenção por outros desenvolvedores.
+- Reduz fragilidade por dependência de formatação exata do relatório: os testes verificam conteúdo essencial, não detalhes frágilmente formatados.
+
+Estas mudanças tornam a suíte mais confiável, melhoram o custo de manutenção e facilitam futuras refatorações do código de produção ou dos próprios testes.
+
+## Referências
+
+Recursos usados e recomendados:
+
+- Plugin ESLint para Jest (Documentação):
+  https://github.com/jest-community/eslint-plugin-jest
+- Artigo sobre Test Smells (Martin Fowler):
+  https://martinfowler.com/bliki/TestSmell.html
+- Relatório sobre o trabalho: [Refatoração de Testes e Detecção de Test Smells](docs/Relatório%20-%20Refatoração%20de%20Testes%20e%20Detecção%20de%20Test%20Smells.pdf)
