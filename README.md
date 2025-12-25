@@ -1,4 +1,4 @@
-# Laboratório de Test Smells - Gerenciador de Usuários
+# Trabalho Prático - Test Smells (Gerenciador de Usuários)
 
 Este repositório serve como base para o trabalho prático sobre **Test Smells** na disciplina de Teste de Software. Ele contém uma suíte de testes que, apesar de passar, está repleta de "maus cheiros" (smells) que comprometem sua qualidade, manutenibilidade e eficácia.
 
